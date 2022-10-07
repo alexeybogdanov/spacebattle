@@ -1,4 +1,4 @@
-public class Move {
+public class Move implements ICommand{
 
     private Movable movable;
 

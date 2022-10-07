@@ -3,6 +3,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import static org.mockito.Mockito.doThrow;
 
 class MoveTest {
@@ -53,5 +56,27 @@ class MoveTest {
         doThrow(new RuntimeException()).when(movable).setPosition(new CustomVector());
 
         Assertions.assertThrows(RuntimeException.class, () -> movable.setPosition(new CustomVector()));
+    }
+
+
+    @Test
+    void catch_3nd_retry_and_log_error_successful() {
+        Mockito.when(movable.getPosition()).thenThrow(new RuntimeException("MoveCommand fails!"));
+
+        ExceptionHandler exceptionHandler = ExceptionHandler.getInstance();
+        Queue<ICommand> queue = ExceptionHandler.getQueue();
+        queue.add(move);
+
+        while (!queue.isEmpty()) {
+            ICommand command = ((LinkedList<ICommand>) queue).pop();
+            try {
+                command.execute();
+            } catch (Exception e) {
+                exceptionHandler.handle(command, e);
+            }
+
+        }
+
+        // As a verification process check terminal output (logs)
     }
 }
