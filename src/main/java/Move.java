@@ -1,4 +1,4 @@
-public class Move {
+public class Move implements ICommand {
 
     private Movable movable;
 
@@ -6,6 +6,7 @@ public class Move {
         this.movable = movable;
     }
 
+    @Override
     public void execute(){
         movable.setPosition(CustomVector.plus(movable.getPosition(), movable.getVelocity()));
     }
