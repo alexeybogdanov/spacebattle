@@ -1,4 +1,4 @@
-public class Rotate {
+public class Rotate implements ICommand{
 
     private Rotable rotable;
 
