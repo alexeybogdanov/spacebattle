@@ -1,6 +1,9 @@
-public class Move {
+public class Move implements ICommand{
 
     private Movable movable;
+
+    public Move() {
+    }
 
     public Move(Movable movable) {
         this.movable = movable;
