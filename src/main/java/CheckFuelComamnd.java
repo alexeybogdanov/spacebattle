@@ -12,6 +12,7 @@ public class CheckFuelComamnd implements ICommand {
             fuelCheckable.checkFuel();
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException("CommandException");
         }
     }
 }
