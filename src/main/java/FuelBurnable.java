@@ -1,4 +1,8 @@
 public interface FuelBurnable {
 
-    void burnFuel();
+    double getFuelLevel();
+
+    double getFuelConsumptionSpeed();
+
+    double burnFuel(double fuelLevel, double fuelConsumptionSpeed);
 }

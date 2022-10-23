@@ -6,8 +6,9 @@ public class BurnFuelCommand implements ICommand{
         this.fuelBurnable = fuelBurnable;
     }
 
+
     @Override
-    public void execute(){
-        fuelBurnable.burnFuel();
+    public void execute() {
+        fuelBurnable.burnFuel(fuelBurnable.getFuelLevel(), fuelBurnable.getFuelConsumptionSpeed());
     }
 }
