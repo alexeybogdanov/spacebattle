@@ -1,3 +1,5 @@
+package com.test;
+
 public class SecondTryMoveCommand implements ICommand {
 
     ICommand command;

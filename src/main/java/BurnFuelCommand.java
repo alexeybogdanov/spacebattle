@@ -1,3 +1,5 @@
+package com.test;
+
 public class BurnFuelCommand implements ICommand{
 
     private FuelBurnable fuelBurnable;

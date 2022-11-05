@@ -1,3 +1,6 @@
+package com.test;
+
+
 public class Log implements ICommand {
 
     ICommand command;

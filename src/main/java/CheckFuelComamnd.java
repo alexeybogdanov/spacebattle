@@ -1,3 +1,5 @@
+package com.test;
+
 public class CheckFuelComamnd implements ICommand {
 
     private FuelCheckable fuelCheckable;
