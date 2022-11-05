@@ -1,3 +1,5 @@
+package com.test;
+
 public interface Rotable {
 
     int getDirection();

@@ -1,3 +1,5 @@
+package com.test;
+
 public class Rotate  implements ICommand{
 
     private Rotable rotable;

@@ -1,3 +1,5 @@
+package com.test;
+
 public class CustomVector {
     private double x;
     private double y;

@@ -1,4 +1,7 @@
+package com.test;
+
 import java.util.List;
+
 
 public class MoveMacroCommand implements ICommand{
 

@@ -1,3 +1,5 @@
+package com.test;
+
 public class Move implements ICommand {
 
     private Movable movable;
